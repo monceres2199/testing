@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Wedding</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background-image: url('Renee bg.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      /* display: flex; */
+      /* justify-content: center; */
+      /* align-items: center; */
+      /* height: 100vh; */
+      /* text-align: center; */
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .wedding-btn {
+      background-color: #e91e63;
+      color: white;
+    }
+
+    .birthday-btn {
+      background-color: #3f51b5;
+      color: white;
+    }
+
+    .couple-btn {
+      display: block;
+      width: 200px;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .gallery img {
+      width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+  </style>
+</head>
+
+<body
+  <header>
+   <div style="display: flex; flex-direction: column; align-items: center; font-weight: bold;">
+        <!-- <img src="Renee logo.jpg" alt="" ;> -->
+<h1 text-align="center">RENEE EVENT PRODUCTION</h1> <a href="https://www.facebook.com/profile.php?id=61553042948131;">Facebook Account</a> <i class="fa-regular fa-envelope"></i> <a href="tel:09171234567">Call/Text: 0917-123-4567</a> <i class="fa-solid fa-location-dot"></i>
+</header>
+
+
+<div id="mainMenu">
+  <h2>Select an Event</h2>
+  <button class="btn wedding-btn" onclick="showWedding()">Wedding</button>
+  <button class="btn birthday-btn" onclick="alert('Birthday gallery coming soon!')">Birthday</button>
+</div>
+
+<!-- Wedding Couples List -->
+<div id="weddingList" class="hidden">
+  <h3>Select a Couple</h3>
+  <button class="couple-btn" onclick="showGallery('johnMary')">Jammel & Mariane</button>
+  <button class="couple-btn" onclick="showGallery('alexSara')">Alex & Sara</button>
+  <button class="couple-btn" onclick="showGallery('mikeAnna')">Mike & Anna</button>
+  <br>
+  <button onclick="goBack()">← Back</button>
+</div>
+
+<!-- Wedding Gallery for Couples -->
+<div id="johnMary" class="gallery hidden">
+  <h3>Wedding Gallery: Jammel & Mariane</h3>
+  <img src="1.jpg" alt="">
+  <img src="2.jpg" alt="">
+  <img src="3.jpg" alt="">
+  <video width="600" controls>
+  <source src="JammelMariane/sample.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+  <br>
+  <button onclick="goBackToList()">← Back to Couples</button>
+</div>
+
+<div id="alexSara" class="gallery hidden">
+  <h3>Wedding Gallery: Alex & Sara</h3>
+  <img src="https://via.placeholder.com/300x200?text=Alex+%26+Sara+1" alt="">
+  <img src="https://via.placeholder.com/300x200?text=Alex+%26+Sara+2" alt="">
+  <br>
+  <button onclick="goBackToList()">← Back to Couples</button>
+</div>
+
+<div id="mikeAnna" class="gallery hidden">
+  <h3>Wedding Gallery: Mike & Anna</h3>
+  <img src="https://via.placeholder.com/300x200?text=Mike+%26+Anna+1" alt="">
+  <img src="https://via.placeholder.com/300x200?text=Mike+%26+Anna+2" alt="">
+  <img src="https://via.placeholder.com/300x200?text=Mike+%26+Anna+3" alt="">
+  <br>
+  <button onclick="goBackToList()">← Back to Couples</button>
+</div>
+
+<script>
+  function showWedding() {
+    document.getElementById('mainMenu').classList.add('hidden');
+    document.getElementById('weddingList').classList.remove('hidden');
+  }
+
+  function showGallery(coupleId) {
+    document.getElementById('weddingList').classList.add('hidden');
+    document.getElementById(coupleId).classList.remove('hidden');
+  }
+
+  function goBackToList() {
+    // Hide all galleries
+    let galleries = document.querySelectorAll('.gallery');
+    galleries.forEach(g => g.classList.add('hidden'));
+
+    // Show couples list again
+    document.getElementById('weddingList').classList.remove('hidden');
+  }
+
+  function goBack() {
+    document.getElementById('weddingList').classList.add('hidden');
+    document.getElementById('mainMenu').classList.remove('hidden');
+  }
+</script>
+
+
+
+
+</body
+
+
+
+
+</body>
+</html>
